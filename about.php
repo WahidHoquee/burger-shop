@@ -18,42 +18,11 @@
 
 <body>
   <header>
-    <div class="menu_item-phone">
-      <img src="./image/flame-burgers-logo-clean.png" id="logo" alt="Burger Logo">
-    </div>
-    <nav>
-      <ul class="menu">
-        <li class="menu_item">
-          <a href="./index.php" class="menu_link">Home</a>
-        </li>
-        <li class="menu_item">
-          <a href="./about.php" class="menu_link">About Burgers</a>
-        </li>
-        <li class="menu_item" id="menu_logo">
-          <img src="./image/flame-burgers-logo-clean.png" id="logo" alt="Burger Logo">
-        </li>
-        <li class="menu_item">
-          <a href="./order.php" class="menu_link">Order online</a>
-        </li>
-        <li class="menu_item">
-          <a href="./contact.php" class="menu_link">Contacts</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- <Replicate from this> -->
-    <div class="menu_box" style="left: 15%;">
-      <h6 class="callbox_title">Order Online or Call Now</h6>
-      <h3 class="callbox_main-title">
-        <i class="fas fa-phone"></i>
-        +8801798-323465
-      </h3>
-    </div>
-    <div class="menu_box" style="right: 15%;">
-      <a href="./auth.php"><i class="fas fa-user menu_icon"></i></a>
-      <a href="./favouriteBurgers.php"><i class="far fa-heart menu_icon"></i></a>
-      <a href="./orderCart.php"><i class="fas fa-shopping-cart menu_icon"></i></a>
-      <i class="fas fa-search menu_icon"></i>
-    </div>
+    <?php
+    include './components/menu.php';
+    include './components/menu_box.php';
+    ?>
+
     <div class="hero-content">
       <h5 class="hero-content_breadcrumb">
         HOME / ABOUT BURGERS
@@ -145,40 +114,9 @@
 
   <!---------------------------------------------------------------------Footer---------------------------------------------------------------------->
 
-
-  <footer class="footer">
-    <div class="footer_image">
-      <img src="./image/flame-burgers-logo.png" class="footer_image-burger" alt="">
-    </div>
-    <div class="footer_ending">
-      <div class="footer_icon-wrapper">
-        <span class="footer_icon">
-          <a href="https://lafka.althemist.com/sushi/#">
-            <i class="fab fa-facebook-f" style="font-size:2.5rem;color: #fff;"></i>
-          </a>
-        </span>
-        <span class="footer_icon">
-          <a href="https://lafka.althemist.com/sushi/#">
-            <i class="fab fa-twitter" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-          </a>
-        </span>
-        <span class="footer_icon">
-          <a href="https://lafka.althemist.com/sushi/#">
-            <i class="fab fa-youtube" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-          </a>
-        </span>
-        <span class="footer_icon">
-          <a href="https://lafka.althemist.com/sushi/#">
-            <i class="fab fa-instagram" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-          </a>
-        </span>
-
-      </div>
-      <h5 class="footer_terms">
-        Lafka theme by theAlThemist | © 2019 All rights reserved!
-      </h5>
-    </div>
-  </footer>
+  <?php
+  include './components/footer.php';
+  ?>
 </body>
 
 </html>

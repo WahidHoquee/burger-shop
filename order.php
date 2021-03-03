@@ -18,42 +18,10 @@
 
 <body>
     <header>
-        <div class="menu_item-phone">
-            <img src="./image/flame-burgers-logo-clean.png" id="logo" alt="Burger Logo">
-        </div>
-        <nav>
-            <ul class="menu">
-                <li class="menu_item">
-                    <a href="./index.php" class="menu_link">Home</a>
-                </li>
-                <li class="menu_item">
-                    <a href="./about.php" class="menu_link">About Burgers</a>
-                </li>
-                <li class="menu_item" id="menu_logo">
-                    <img src="./image/flame-burgers-logo-clean.png" id="logo" alt="Burger Logo">
-                </li>
-                <li class="menu_item">
-                    <a href="./order.php" class="menu_link">Order online</a>
-                </li>
-                <li class="menu_item">
-                    <a href="./contact.php" class="menu_link">Contacts</a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="menu_box" style="left: 15%;">
-            <h6 class="callbox_title">Order Online or Call Now</h6>
-            <h3 class="callbox_main-title">
-                <i class="fas fa-phone"></i>
-                +8801 776 255 895
-            </h3>
-        </div>
-        <div class="menu_box" style="right: 15%;">
-            <i class="fas fa-user menu_icon"></i>
-            <i class="far fa-heart menu_icon"></i>
-            <i class="fas fa-shopping-cart menu_icon"></i>
-            <i class="fas fa-search menu_icon"></i>
-        </div>
+        <?php
+        include './components/menu.php';
+        include './components/menu_box.php';
+        ?>
         <div class="product">
             <ul class="product-categories">
                 <li class="product-category">
@@ -105,7 +73,7 @@
                                 <span class="burger_price-subscript">.49</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/burger18-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="ANGUSBURGERS" data-burger="1"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="ANGUSBURGERS" data-id="1"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -113,7 +81,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="ANGUSBURGERS" data-burger="1">Order Now</button>
+                            <button class="burger_order" data-type="ANGUSBURGERS" data-id="1">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -124,7 +92,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/burger13-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="ANGUSBURGERS" data-burger="2"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="ANGUSBURGERS" data-id="2"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -132,7 +100,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="ANGUSBURGERS" data-burger="2">Order Now</button>
+                            <button class="burger_order" data-type="ANGUSBURGERS" data-id="2">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -143,7 +111,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/burger11-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="ANGUSBURGERS" data-burger="3"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="ANGUSBURGERS" data-id="3"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -151,7 +119,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="ANGUSBURGERS" data-burger="3">Order Now</button>
+                            <button class="burger_order" data-type="ANGUSBURGERS" data-id="3">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -162,7 +130,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/burger20-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="STEAKBURGERS" data-burger="1"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="STEAKBURGERS" data-id="1"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -170,7 +138,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="STEAKBURGERS" data-burger="1">Order Now</button>
+                            <button class="burger_order" data-type="STEAKBURGERS" data-id="1">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -181,7 +149,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/burger12-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="EGGSYBURGERS" data-burger="2"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="EGGSYBURGERS" data-id="2"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -189,7 +157,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="EGGSYBURGERS" data-burger="2">Order Now</button>
+                            <button class="burger_order" data-type="EGGSYBURGERS" data-id="2">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -219,7 +187,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burger19-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="STEAKBURGERS" data-burger="2"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="STEAKBURGERS" data-id="2"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -227,7 +195,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="STEAKBURGERS" data-burger="2">Order Now</button>
+                            <button class="burger_order" data-type="STEAKBURGERS" data-id="2">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -238,7 +206,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/burger14-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="EGGSYBURGERS" data-burger="3"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="EGGSYBURGERS" data-id="3"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -246,7 +214,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="EGGSYBURGERS" data-burger="3">Order Now</button>
+                            <button class="burger_order" data-type="EGGSYBURGERS" data-id="3">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -257,7 +225,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burger17-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="STEAKBURGERS" data-burger="3"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="STEAKBURGERS" data-id="3"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -265,7 +233,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="STEAKBURGERS" data-burger="3">Order Now</button>
+                            <button class="burger_order" data-type="STEAKBURGERS" data-id="3">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -276,7 +244,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/side5-600x600.jpg" alt="" />
-                            <div class="burger_icon" data-type="SIDES" data-burger="1"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="SIDES" data-id="1"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -284,7 +252,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="SIDES" data-burger="1">Order Now</button>
+                            <button class="burger_order" data-type="SIDES" data-id="1">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -295,7 +263,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/side4-600x600.jpg" alt="" />
-                            <div class="burger_icon" data-type="SIDES" data-burger="2"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="SIDES" data-id="2"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -303,7 +271,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="SIDES" data-burger="2">Order Now</button>
+                            <button class="burger_order" data-type="SIDES" data-id="2">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -314,7 +282,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/side6-600x600.jpg" alt="" />
-                            <div class="burger_icon" data-type="SIDES" data-burger="3"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="SIDES" data-id="3"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -322,7 +290,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="SIDES" data-burger="3">Order Now</button>
+                            <button class="burger_order" data-type="SIDES" data-id="3">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -333,7 +301,7 @@
                                 <span class="burger_price-subscript">.49</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/side3-600x600.jpg" alt="" />
-                            <div class="burger_icon" data-type="SIDES" data-burger="4"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="SIDES" data-id="4"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -341,7 +309,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="SIDES" data-burger="4">Order Now</button>
+                            <button class="burger_order" data-type="SIDES" data-id="4">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -352,7 +320,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/side2-600x600.jpg" alt="" />
-                            <div class="burger_icon" data-type="SIDES" data-burger="5"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="SIDES" data-id="5"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -360,7 +328,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="SIDES" data-burger="5">Order Now</button>
+                            <button class="burger_order" data-type="SIDES" data-id="5">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -371,7 +339,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/side1-600x600.jpg" alt="" />
-                            <div class="burger_icon" data-type="SIDES" data-burger="6"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="SIDES" data-id="6"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -379,7 +347,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="SIDES" data-burger="6">Order Now</button>
+                            <button class="burger_order" data-type="SIDES" data-id="6">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -390,7 +358,7 @@
                                 <span class="burger_price-subscript">.99</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/shake3-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type=" DRINKS" data-burger="1"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type=" DRINKS" data-id="1"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -398,7 +366,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="DRINKS" data-burger="1">Order Now</button>
+                            <button class="burger_order" data-type="DRINKS" data-id="1">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -409,7 +377,7 @@
                                 <span class="burger_price-subscript">.49</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/shake2-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type="DRINKS" data-burger="2"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type="DRINKS" data-id="2"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -417,7 +385,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type="DRINKS" data-burger="2">Order Now</button>
+                            <button class="burger_order" data-type="DRINKS" data-id="2">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -428,7 +396,7 @@
                                 <span class="burger_price-subscript">.49</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/shake1-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type=" DRINKS" data-burger="3"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type=" DRINKS" data-id="3"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -436,7 +404,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type=" DRINKS" data-burger="3">Order Now</button>
+                            <button class="burger_order" data-type=" DRINKS" data-id="3">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -447,7 +415,7 @@
                                 <span class="burger_price-subscript">.49</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/shake5-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type=" DRINKS" data-burger="4"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type=" DRINKS" data-id="4"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -455,7 +423,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type=" DRINKS" data-burger="4">Order Now</button>
+                            <button class="burger_order" data-type=" DRINKS" data-id="4">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -466,7 +434,7 @@
                                 <span class="burger_price-subscript">.49</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/shake4-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type=" DRINKS" data-burger="5"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type=" DRINKS" data-id="5"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -474,7 +442,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type=" DRINKS" data-burger="5">Order Now</button>
+                            <button class="burger_order" data-type=" DRINKS" data-id="5">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -485,7 +453,7 @@
                                 <span class="burger_price-subscript">.49</span>
                             </div>
                             <img class="burger_image" src="./image/burgers/shake6-430x430.jpg" alt="" />
-                            <div class="burger_icon" data-type=" DRINKS" data-burger="6"><i class="far fa-heart"></i></div>
+                            <div class="burger_icon" data-type=" DRINKS" data-id="6"><i class="far fa-heart"></i></div>
                             <!-- <div class="burger_icon">....#####....</div> -->
                         </div>
                         <div class="burger_content">
@@ -493,7 +461,7 @@
                             <p class="burger_details">Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with
                                 lettuce,
                                 tomato, house BBQ & ranch.</p>
-                            <button class="burger_order" data-type=" DRINKS" data-burger="6">Order Now</button>
+                            <button class="burger_order" data-type=" DRINKS" data-id="6">Order Now</button>
                         </div>
                     </div>
                 </div>
@@ -502,42 +470,13 @@
     </section>
 
 
-    <footer class="footer">
-        <div class="footer_image">
-            <img src="./image/flame-burgers-logo.png" class="footer_image-burger" alt="">
-        </div>
-        <div class="footer_ending">
-            <div class="footer_icon-wrapper">
-                <span class="footer_icon">
-                    <a href="https://lafka.althemist.com/sushi/#">
-                        <i class="fab fa-facebook-f" style="font-size:2.5rem;color: #fff;"></i>
-                    </a>
-                </span>
-                <span class="footer_icon">
-                    <a href="https://lafka.althemist.com/sushi/#">
-                        <i class="fab fa-twitter" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-                    </a>
-                </span>
-                <span class="footer_icon">
-                    <a href="https://lafka.althemist.com/sushi/#">
-                        <i class="fab fa-youtube" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-                    </a>
-                </span>
-                <span class="footer_icon">
-                    <a href="https://lafka.althemist.com/sushi/#">
-                        <i class="fab fa-instagram" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-                    </a>
-                </span>
-
-            </div>
-            <h5 class="footer_terms">
-                Lafka theme by theAlThemist | © 2019 All rights reserved!
-            </h5>
-        </div>
-    </footer>
+    <?php
+    include './components/footer.php';
+    ?>
     <script src="./scripts/product-data.js"></script>
     <script src="./scripts/product-categories.js"></script>
     <script src="./scripts/favourites.js"></script>
+    <script src="./scripts/cart.js"></script>
 </body>
 
 </html>

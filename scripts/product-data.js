@@ -22,8 +22,7 @@ var products = {
       name: 'Onion-y Angus Burger', 
       price: '14.99',
       description: 'Smoked brisket, tender ribs, smoked sausage, bacon & cheddar with lettuce, tomato, house BBQ & ranch.'
-    }
-    
+    },
   ],
   STEAKBURGERS: [
     {

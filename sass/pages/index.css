@@ -105,6 +105,10 @@ a {
   padding: 0rem 0rem 3rem 0rem;
 }
 
+button:focus {
+  outline: none;
+}
+
 .button {
   border: 0;
   background-color: #ca0930;
@@ -794,6 +798,10 @@ nav {
   text-transform: uppercase;
   border: 0.2rem solid #e8e8e8;
   margin-top: 1rem;
+}
+
+.burger_order:hover {
+  border: 0.2rem solid #a5102e;
 }
 
 .detail {

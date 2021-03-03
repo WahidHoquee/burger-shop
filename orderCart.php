@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Burger™ – Lafka Burger</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon_io/favicon-16x16.png">
+  <title>My Order™ – Lafka Burger</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sass/pages/simple-grid.min.css">
   <link rel="stylesheet" href="fontawesome/css/all.css">
@@ -16,42 +18,10 @@
 <body>
   <header>
     <div class="burger-menu-wrapper">
-      <div class="menu_item-phone">
-        <img src="./image/flame-burgers-logo-clean.png" id="logo" alt="Burger Logo">
-      </div>
-      <nav>
-        <ul class="menu">
-          <li class="menu_item">
-            <a href="./index.php" class="menu_link">Home</a>
-          </li>
-          <li class="menu_item">
-            <a href="./about.php" class="menu_link">About Burgers</a>
-          </li>
-          <li class="menu_item" id="menu_logo">
-            <img src="./image/flame-burgers-logo-clean.png" id="logo" alt="Burger Logo">
-          </li>
-          <li class="menu_item">
-            <a href="./order.php" class="menu_link">Order online</a>
-          </li>
-          <li class="menu_item">
-            <a href="./contact.php" class="menu_link">Contacts</a>
-          </li>
-        </ul>
-      </nav>
-      <!-- <Replicate from this> -->
-      <div class="menu_box" style="left: 15%;">
-        <h6 class="callbox_title">Order Online or Call Now</h6>
-        <h3 class="callbox_main-title">
-          <i class="fas fa-phone"></i>
-          +8801798-323465
-        </h3>
-      </div>
-      <div class="menu_box" style="right: 15%;">
-        <a href="./auth.php"><i class="fas fa-user menu_icon"></i></a>
-        <a href="./favouriteBurgers.php"><i class="far fa-heart menu_icon"></i></a>
-        <a href="./orderCart.php"><i class="fas fa-shopping-cart menu_icon"></i></a>
-        <i class="fas fa-search menu_icon"></i>
-      </div>
+      <?php
+      include './components/menu.php';
+      include './components/menu_box.php';
+      ?>
       <div class="product">
         <ul class="product-categories">
           <li class="product-category">
@@ -91,12 +61,48 @@
       </div>
     </div>
   </header>
-  <Section>
-    <div style="margin: 10rem auto; text-align: center">
+  <Section id="order-cart">
+    <!-- <div style="margin: 10rem auto; text-align: center">
       <p style="color: #777; font-size: 1.8rem; margin-bottom: 3rem"> Your cart is Currently Empty</p>
       <button class="button">RETURN TO SHOP</button>
-    </div>
+    </div> -->
+    <ul class="fav">
+      <script>
+        const orderCartContainer = document.querySelector('#order-cart ul.fav');
+        const orderCart = JSON.parse(localStorage.getItem('order-cart'));
+        for (var k = 0; k < orderCart.length; k++) {
+          // Storing one of the product in a variable
+          var product = orderCart[k];
+
+          // Splitting the product price
+          var price = product.price.split('.');
+
+          orderCartContainer.insertAdjacentHTML('beforeend', `
+              <li class="fav_list">
+                <span class="fav_icon">
+                  <i class="far fa-trash-alt"></i>
+                </span>
+                <span class="fav_image">
+                  <img src=${product.image} />
+                </span>
+                <span class="fav_title">
+                  ${product.name}
+                </span>
+                <span class="fav_price">
+                  $${price[0]}.<span class="fav_price-subscript">${price[1]}</span>
+                </span>
+              </li>
+            `)
+        }
+      </script>
+    </ul>
+    <a href="orderPlace.php" style="display: inline-block;" class="button">Proceed To Checkout</a>
   </Section>
+
+  <?php
+  include './components/footer.php';
+  ?>
+
 </body>
 
 </html>

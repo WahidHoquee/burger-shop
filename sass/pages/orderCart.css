@@ -105,6 +105,10 @@ a {
   padding: 0rem 0rem 3rem 0rem;
 }
 
+button:focus {
+  outline: none;
+}
+
 .button {
   border: 0;
   background-color: #ca0930;
@@ -522,6 +526,11 @@ nav {
   }
 }
 
+#order-cart {
+  text-align: center;
+  padding: 10rem 0;
+}
+
 .burger-menu-wrapper {
   height: 33vh;
   width: 100%;
@@ -574,5 +583,138 @@ nav {
   .burger-content-wrapper .hero-content {
     top: 55%;
   }
+}
+
+.fav {
+  border: 2px solid #e8e8e8;
+  width: 60rem;
+  margin: 0rem auto 5rem;
+}
+
+@media (max-width: 56.25em) {
+  .fav {
+    width: 100%;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .fav {
+    border: none;
+  }
+}
+
+.fav_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: .5rem 1rem;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 1.4rem;
+}
+
+.fav_list:nth-child(even) {
+  background-color: #fafafa !important;
+}
+
+.fav_icon {
+  width: 10%;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.fav_icon-block {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.fav_image {
+  width: 25%;
+}
+
+.fav_image img {
+  height: 10rem;
+}
+
+.fav_title {
+  width: 50%;
+  color: #ce4f44;
+}
+
+.fav_price {
+  width: 15%;
+  position: relative;
+}
+
+.fav_price-subscript {
+  position: absolute;
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+.fav_stockInfo {
+  width: 15%;
+}
+
+.fav_button {
+  width: 20%;
+}
+
+.fav_button button {
+  background-color: #ce4f44;
+  width: 100%;
+  font-weight: 400;
+  padding: 12px 15px;
+}
+
+.fav_button-block button {
+  width: 90%;
+  margin: 1rem 0 2rem;
+}
+
+.fav_block {
+  width: 90%;
+  margin: 2rem auto;
+  border: 2px solid #e8e8e8;
+  text-align: center;
+  position: relative;
+}
+
+.fav_block-image {
+  width: 90%;
+}
+
+.fav_block-title {
+  font-size: 2.2rem;
+  display: block;
+  color: #ce4f44;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.fav_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fav_details > * {
+  display: block;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=orderCart.css.map */

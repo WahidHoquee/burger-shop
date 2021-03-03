@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon_io/favicon-16x16.png">
   <title>Favourite Burgers™ – Lafka Burger</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sass/pages/simple-grid.min.css">
@@ -16,42 +18,10 @@
 <body>
   <header>
     <div class="burger-menu-wrapper">
-      <div class="menu_item-phone">
-        <img src="./image/flame-burgers-logo-clean.png" id="logo" alt="Burger Logo">
-      </div>
-      <nav>
-        <ul class="menu">
-          <li class="menu_item">
-            <a href="./index.php" class="menu_link">Home</a>
-          </li>
-          <li class="menu_item">
-            <a href="./about.php" class="menu_link">About Burgers</a>
-          </li>
-          <li class="menu_item" id="menu_logo">
-            <img src="./image/flame-burgers-logo-clean.png" id="logo" alt="Burger Logo">
-          </li>
-          <li class="menu_item">
-            <a href="./order.php" class="menu_link">Order online</a>
-          </li>
-          <li class="menu_item">
-            <a href="./contact.php" class="menu_link">Contacts</a>
-          </li>
-        </ul>
-      </nav>
-      <!-- <Replicate from this> -->
-      <div class="menu_box" style="left: 15%;">
-        <h6 class="callbox_title">Order Online or Call Now</h6>
-        <h3 class="callbox_main-title">
-          <i class="fas fa-phone"></i>
-          +8801798-323465
-        </h3>
-      </div>
-      <div class="menu_box" style="right: 15%;">
-        <a href="./auth.php"><i class="fas fa-user menu_icon"></i></a>
-        <a href="./favouriteBurgers.php"><i class="far fa-heart menu_icon"></i></a>
-        <a href="./orderCart.php"><i class="fas fa-shopping-cart menu_icon"></i></a>
-        <i class="fas fa-search menu_icon"></i>
-      </div>
+      <?php
+      include './components/menu.php';
+      include './components/menu_box.php';
+      ?>
       <div class="product">
         <ul class="product-categories">
           <li class="product-category">
@@ -91,6 +61,11 @@
       </div>
     </div>
   </header>
+
+
+<!-------------------------------------------------------------------Favourite Products---------------------------------------------------------------------------->
+
+
   <Section id="favourites">
     <!-- <div style="margin: 10rem auto; text-align: center">
       <p style="color: #777; font-size: 1.8rem; margin-bottom: 3rem">No products added to the wishlist</p>
@@ -103,115 +78,129 @@
         My Favourites on Lafka Burgers
       </p>
       <ul class="fav">
-        <!-- <li class="fav_list">
-          <span class="fav_icon">
+        <script>
+          const favouriteBurgerContainer = document.querySelector('#favourites ul.fav');
+          const favourites = JSON.parse(localStorage.getItem('favourites'));
+          for (var j = 0; j < favourites.length; j++) {
+            // Storing one of the product in a variable
+            var product = favourites[j];
+
+            // Splitting the product price
+            var price = product.price.split('.');
+
+            favouriteBurgerContainer.insertAdjacentHTML('beforeend', `
+              <li class="fav_list">
+                <span class="fav_icon">
+                  <i class="far fa-trash-alt"></i>
+                </span>
+                <span class="fav_image">
+                  <img src=${product.image} />
+                </span>
+                <span class="fav_title">
+                  ${product.name}
+                </span>
+                <span class="fav_price">
+                  $${price[0]}.<span class="fav_price-subscript">${price[1]}</span>
+                </span>
+                <span class="fav_stockInfo">
+                  In Stock
+                </span>
+                <span class="fav_button">
+                  <button class="button">ADD TO CART</button>
+                </span>
+              </li>
+            `)
+          }
+        </script>
+        <!-- <li class="fav_block">
+          <img class="fav_block-image" src="./image/burgers/burger11-430x430.jpg" />
+          <h5 class="fav_block-title">
+            Western Bacon Angus Burger
+          </h5>
+          <span class="fav_icon-block">
             <i class="far fa-trash-alt"></i>
           </span>
           <span class="fav_image">
-            <img src="./image/burgers/burger11-430x430.jpg" />
           </span>
-          <span class="fav_title">
+          <div class="fav_details">
+            <h6>Price:</h6>
+            <span class="fav_price">
+              $12.<span class="fav_price-subscript">49</span>
+            </span>
+          </div>
+          <div class="fav_details">
+            <h6>Stock:</h6>
+            <span class="fav_stockInfo">
+              In Stock
+            </span>
+          </div>
+          <span class="fav_button-block">
+            <button class="button">ADD TO CART</button>
+          </span>
+        </li>
+        <li class="fav_block">
+          <img class="fav_block-image" src="./image/burgers/burger11-430x430.jpg" />
+          <h5 class="fav_block-title">
             Western Bacon Angus Burger
+          </h5>
+          <span class="fav_icon-block">
+            <i class="far fa-trash-alt"></i>
           </span>
-          <span class="fav_price">
-            $12.<span class="fav_price-subscript">49</span>
+          <span class="fav_image">
           </span>
-          <span class="fav_stockInfo">
-            In Stock
-          </span>
-          <span class="fav_button">
+          <div class="fav_details">
+            <h6>Price:</h6>
+            <span class="fav_price">
+              $12.<span class="fav_price-subscript">49</span>
+            </span>
+          </div>
+          <div class="fav_details">
+            <h6>Stock:</h6>
+            <span class="fav_stockInfo">
+              In Stock
+            </span>
+          </div>
+          <span class="fav_button-block">
             <button class="button">ADD TO CART</button>
           </span>
         </li> -->
-        <li class="fav_block">
-          <img class="fav_block-image" src="./image/burgers/burger11-430x430.jpg" />
-          <h5 class="fav_block-title">
-            Western Bacon Angus Burger
-          </h5>
-          <span class="fav_icon-block">
-            <i class="far fa-trash-alt"></i>
-          </span>
-          <span class="fav_image">
-          </span>
-          <div class="fav_details">
-            <h6>Price:</h6>
-            <span class="fav_price">
-              $12.<span class="fav_price-subscript">49</span>
-            </span>
-          </div>
-          <div class="fav_details">
-            <h6>Stock:</h6>
-            <span class="fav_stockInfo">
-              In Stock
-            </span>
-          </div>
-          <span class="fav_button-block">
-            <button class="button">ADD TO CART</button>
-          </span>
-        </li>
-        <li class="fav_block">
-          <img class="fav_block-image" src="./image/burgers/burger11-430x430.jpg" />
-          <h5 class="fav_block-title">
-            Western Bacon Angus Burger
-          </h5>
-          <span class="fav_icon-block">
-            <i class="far fa-trash-alt"></i>
-          </span>
-          <span class="fav_image">
-          </span>
-          <div class="fav_details">
-            <h6>Price:</h6>
-            <span class="fav_price">
-              $12.<span class="fav_price-subscript">49</span>
-            </span>
-          </div>
-          <div class="fav_details">
-            <h6>Stock:</h6>
-            <span class="fav_stockInfo">
-              In Stock
-            </span>
-          </div>
-          <span class="fav_button-block">
-            <button class="button">ADD TO CART</button>
-          </span>
-        </li>
       </ul>
     </div>
   </Section>
-    <!---------------------------------------------------------------------Footer--------------------------------------------------------------->
-    <footer class="footer">
-      <div class="footer_image">
-        <img src="./image/flame-burgers-logo.png" class="footer_image-burger" alt="">
+  <!---------------------------------------------------------------------Footer--------------------------------------------------------------->
+  <footer class="footer">
+    <div class="footer_image">
+      <img src="./image/flame-burgers-logo.png" class="footer_image-burger" alt="">
+    </div>
+    <div class="footer_ending">
+      <div class="footer_icon-wrapper">
+        <span class="footer_icon">
+          <a href="https://lafka.althemist.com/sushi/#">
+            <i class="fab fa-facebook-f" style="font-size:2.5rem;color: #fff;"></i>
+          </a>
+        </span>
+        <span class="footer_icon">
+          <a href="https://lafka.althemist.com/sushi/#">
+            <i class="fab fa-twitter" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
+          </a>
+        </span>
+        <span class="footer_icon">
+          <a href="https://lafka.althemist.com/sushi/#">
+            <i class="fab fa-youtube" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
+          </a>
+        </span>
+        <span class="footer_icon">
+          <a href="https://lafka.althemist.com/sushi/#">
+            <i class="fab fa-instagram" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
+          </a>
+        </span>
+
       </div>
-      <div class="footer_ending">
-        <div class="footer_icon-wrapper">
-          <span class="footer_icon">
-            <a href="https://lafka.althemist.com/sushi/#">
-              <i class="fab fa-facebook-f" style="font-size:2.5rem;color: #fff;"></i>
-            </a>
-          </span>
-          <span class="footer_icon">
-            <a href="https://lafka.althemist.com/sushi/#">
-              <i class="fab fa-twitter" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-            </a>
-          </span>
-          <span class="footer_icon">
-            <a href="https://lafka.althemist.com/sushi/#">
-              <i class="fab fa-youtube" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-            </a>
-          </span>
-          <span class="footer_icon">
-            <a href="https://lafka.althemist.com/sushi/#">
-              <i class="fab fa-instagram" style="font-size:2.5rem;color: #fff;padding:0px 2px 0px 5px;"></i>
-            </a>
-          </span>
-  
-        </div>
-        <h5 class="footer_terms">
-          Lafka theme by theAlThemist | © 2019 All rights reserved!
-        </h5>
-      </div>
-    </footer>  
+      <h5 class="footer_terms">
+        Lafka theme by theAlThemist | © 2019 All rights reserved!
+      </h5>
+    </div>
+  </footer>
 </body>
 
 </html>

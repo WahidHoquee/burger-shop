@@ -12,31 +12,34 @@ header {
   
 .address {
     color:black;
-    padding:50px 10px 5px 10px;
-    font-size:40px;
+    padding:5rem 1rem 0.5rem 0.1rem;
+    font-size:4rem;
 }
 
 .container{
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 1200px)
 {
   .container{
-    max-width: 1140px;
+    max-width: 114rem;
   }
 }
 .d-flex{
   display: flex;
   flex-direction: row;
-  background: #f6f6f6;
+  background: #f9f9f9;
   border-radius: 0 0 5px 5px;
   padding: 25px;
+  @include respond(phone) {
+    flex-direction: column;
+  }  
 }
-form{
+.form-input{
   flex: 4;
 }
 .Yorder{
@@ -72,17 +75,20 @@ label>span{
 input[type="text"], input[type="tel"], input[type="email"], select
 {
   width: 70%;
-  height: 30px;
+  height: 40px;
   padding: 5px 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border: 1px solid #dadada;
   color: #888;
+  // @include respond(phone) {
+  //   width: 70%;
+  // }  
 }
 select{
-  width: 72%;
-  height: 45px;
+  width: 70%;
+  height: 37px;
   padding: 5px 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .Yorder{
   margin-top: 15px;
@@ -104,7 +110,11 @@ tr>td:nth-child(1){
 }
 tr>td:nth-child(2){
   text-align: right;
-  color: #52ad9c;
+  color: #ca0930;
+}
+tr>td:nth-child(3){
+  text-align: right;
+  color: #ca0930;
 }
 td{
   border-bottom: 1px solid #dadada;
@@ -121,18 +131,18 @@ p{
   padding: 15px 0; 
 }
 
-button{
+input[type="submit"]{
   width: 100%;
   margin-top: 10px;
   padding: 10px;
   border: none;
   border-radius: 30px;
-  background: #52ad9c;
+  background: #ca0930;
   color: #fff;
   font-size: 15px;
   font-weight: bold;
 }
 button:hover{
   cursor: pointer;
-  background: #428a7d;
+  background: #f7b13a;
 }

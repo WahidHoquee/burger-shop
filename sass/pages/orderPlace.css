@@ -105,6 +105,10 @@ a {
   padding: 0rem 0rem 3rem 0rem;
 }
 
+button:focus {
+  outline: none;
+}
+
 .button {
   border: 0;
   background-color: #ca0930;
@@ -435,21 +439,21 @@ header {
 
 .address {
   color: black;
-  padding: 50px 10px 5px 10px;
-  font-size: 40px;
+  padding: 5rem 1rem 0.5rem 0.1rem;
+  font-size: 4rem;
 }
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   margin-right: auto;
   margin-left: auto;
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 114rem;
   }
 }
 
@@ -461,12 +465,21 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background: #f6f6f6;
+  background: #f9f9f9;
   border-radius: 0 0 5px 5px;
   padding: 25px;
 }
 
-form {
+@media (max-width: 37.5em) {
+  .d-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.form-input {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
@@ -509,18 +522,18 @@ label > span {
 
 input[type="text"], input[type="tel"], input[type="email"], select {
   width: 70%;
-  height: 30px;
+  height: 40px;
   padding: 5px 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border: 1px solid #dadada;
   color: #888;
 }
 
 select {
-  width: 72%;
-  height: 45px;
+  width: 70%;
+  height: 37px;
   padding: 5px 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .Yorder {
@@ -547,7 +560,12 @@ tr > td:nth-child(1) {
 
 tr > td:nth-child(2) {
   text-align: right;
-  color: #52ad9c;
+  color: #ca0930;
+}
+
+tr > td:nth-child(3) {
+  text-align: right;
+  color: #ca0930;
 }
 
 td {
@@ -566,13 +584,13 @@ p {
   padding: 15px 0;
 }
 
-button {
+input[type="submit"] {
   width: 100%;
   margin-top: 10px;
   padding: 10px;
   border: none;
   border-radius: 30px;
-  background: #52ad9c;
+  background: #ca0930;
   color: #fff;
   font-size: 15px;
   font-weight: bold;
@@ -580,6 +598,6 @@ button {
 
 button:hover {
   cursor: pointer;
-  background: #428a7d;
+  background: #f7b13a;
 }
 /*# sourceMappingURL=orderPlace.css.map */

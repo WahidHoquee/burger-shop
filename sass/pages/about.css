@@ -105,6 +105,10 @@ a {
   padding: 0rem 0rem 3rem 0rem;
 }
 
+button:focus {
+  outline: none;
+}
+
 .button {
   border: 0;
   background-color: #ca0930;
